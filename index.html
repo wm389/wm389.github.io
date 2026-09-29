@@ -1,0 +1,918 @@
+
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>William Mendoza-Marquez | Finance & Operations Portfolio</title>
+  <meta name="description" content="Professional portfolio of William Mendoza-Marquez - Rutgers Business School Finance student and banquet operations specialist.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            scarlet: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              200: '#fecdd3',
+              500: '#f43f5e',
+              600: '#e11d48',
+              700: '#cc0033', // Rutgers Scarlet
+              800: '#9f1239',
+              900: '#881337',
+              950: '#4c0519',
+            },
+            navy: {
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    .glassmorphism {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 15%, rgba(204, 0, 51, 0.12) 0%, transparent 68%);
+    }
+    .dark .hero-glow {
+      background: radial-gradient(circle at 50% 15%, rgba(204, 0, 51, 0.22) 0%, transparent 72%);
+    }
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.05);
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.6);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cc0033;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9f1239;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-navy-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300 selection:bg-scarlet-700 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <header class="fixed top-0 left-0 right-0 z-50 glassmorphism bg-white/90 dark:bg-navy-950/90 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group font-display font-extrabold text-lg tracking-tight text-slate-900 dark:text-white">
+        <span class="w-9 h-9 rounded-xl bg-scarlet-700 text-white flex items-center justify-center font-bold tracking-tight shadow-md shadow-scarlet-700/30 group-hover:scale-105 transition-transform duration-200">
+          WM
+        </span>
+        <span class="hidden sm:inline">William <span class="text-scarlet-700 dark:text-scarlet-500">Mendoza-Marquez</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">About</a>
+        <a href="#education" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">Education</a>
+        <a href="#experience" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">Experience</a>
+        <a href="#skills" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">Skills</a>
+        <a href="#coursework" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">Coursework</a>
+        <a href="#involvement" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">Involvement</a>
+        <a href="#contact" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Dark/Light Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+          <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-slate-700"></i>
+        </button>
+
+        <!-- Direct Connect CTA -->
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-scarlet-700 hover:bg-scarlet-800 rounded-xl shadow-sm shadow-scarlet-700/30 transition-all hover:scale-[1.02]">
+          <span>Connect</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button id="mobile-menu-btn" aria-label="Toggle Mobile Navigation" class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-navy-950/95 px-6 py-5 space-y-4 shadow-xl">
+      <a href="#about" class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-200 hover:text-scarlet-700">About</a>
+      <a href="#education" class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-200 hover:text-scarlet-700">Education</a>
+      <a href="#experience" class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-200 hover:text-scarlet-700">Experience</a>
+      <a href="#skills" class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-200 hover:text-scarlet-700">Skills & Proficiencies</a>
+      <a href="#coursework" class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-200 hover:text-scarlet-700">Relevant Coursework</a>
+      <a href="#involvement" class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-200 hover:text-scarlet-700">Involvement & Service</a>
+      <a href="#contact" class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-200 hover:text-scarlet-700">Contact</a>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-16">
+    <section id="hero" class="relative hero-glow min-h-[92vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+      <div class="max-w-6xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Intro Copy -->
+          <div class="lg:col-span-7 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-scarlet-50 dark:bg-scarlet-950/80 border border-scarlet-200 dark:border-scarlet-800 text-scarlet-700 dark:text-scarlet-400 text-xs font-semibold mb-6">
+              <span class="w-2 h-2 rounded-full bg-scarlet-700 animate-pulse"></span>
+              Rutgers Business School • Finance Class of 2027
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
+              William <br class="hidden sm:inline" />
+              <span class="bg-gradient-to-r from-scarlet-700 via-rose-600 to-amber-600 bg-clip-text text-transparent">Mendoza-Marquez</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+              Finance undergraduate with a 3.7 GPA foundation, bridging corporate quantitative modeling with high-pressure operations and guest hospitality leadership. Native bilingual in English and Spanish.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-9">
+              <a href="#experience" class="px-6 py-3 rounded-xl bg-scarlet-700 hover:bg-scarlet-800 text-white font-semibold text-sm shadow-lg shadow-scarlet-700/25 hover:shadow-scarlet-700/40 hover:-translate-y-0.5 transition-all">
+                View Work Experience
+              </a>
+              <button onclick="window.print()" class="px-5 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-900 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold text-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                <i data-lucide="printer" class="w-4 h-4"></i>
+                <span>Print / Save PDF</span>
+              </button>
+              <a href="https://www.linkedin.com/in/william-mendoza-marquez-817841274" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-navy-900 text-slate-700 dark:text-slate-300 hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors flex items-center gap-2 text-sm font-semibold">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+
+            <!-- Quick Contact Badges -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs text-slate-500 dark:text-slate-400">
+              <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-scarlet-700"></i> Ocean Township, NJ 07712</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-4 h-4 text-scarlet-700"></i> (848) 466-3819</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-4 h-4 text-scarlet-700"></i> wm389@scarletmail.rutgers.edu</span>
+            </div>
+          </div>
+
+          <!-- Profile Photo Frame with JPEG loader -->
+          <div class="lg:col-span-5 flex flex-col items-center">
+            <div class="relative group w-64 h-80 sm:w-80 sm:h-96">
+              <div class="absolute -inset-2 bg-gradient-to-tr from-scarlet-700 via-rose-500 to-amber-500 rounded-3xl blur-lg opacity-40 group-hover:opacity-65 transition duration-500"></div>
+              
+              <div class="relative w-full h-full rounded-2xl overflow-hidden bg-slate-900 border-2 border-white dark:border-slate-700 shadow-2xl flex flex-col items-center justify-center">
+                <!-- Direct JPEG image container -->
+                <img 
+                  id="profile-img"
+                  src="profile.jpg" 
+                  alt="William Mendoza-Marquez" 
+                  class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x800/881337/ffffff?text=William+Mendoza-Marquez';"
+                />
+
+                <!-- Floating Title Label -->
+                <div class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-navy-900/90 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-slate-200/60 dark:border-slate-700 shadow-md flex items-center justify-between text-xs">
+                  <div>
+                    <div class="font-bold text-slate-900 dark:text-white">William Mendoza-Marquez</div>
+                    <div class="text-[11px] text-scarlet-700 dark:text-scarlet-400 font-medium">Finance & Banquet Operations</div>
+                  </div>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                    Active
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Client-Side JPEG Photo Previewer -->
+            <div class="mt-4 flex flex-col items-center gap-1 text-center">
+              <label for="image-upload" class="cursor-pointer text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-scarlet-700 dark:hover:text-scarlet-400 flex items-center gap-1.5 transition-colors">
+                <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                <span>Preview local JPEG photo</span>
+              </label>
+              <input type="file" id="image-upload" accept="image/jpeg, image/jpg, image/png" class="hidden">
+              <p class="text-[11px] text-slate-400 dark:text-slate-500">
+                To publish permanently: save your photo as <code class="bg-slate-200 dark:bg-slate-800 px-1 py-0.5 rounded text-scarlet-700 dark:text-scarlet-400 font-mono">profile.jpg</code> in your repo.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 border-t border-slate-200 dark:border-slate-800/80 px-4 sm:px-6 lg:px-8 bg-white/50 dark:bg-navy-900/30">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="text-xs uppercase tracking-widest font-bold text-scarlet-700 dark:text-scarlet-400">Professional Identity</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white mt-1">Analytical Rigor Meets Fast-Paced Execution</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-scarlet-50 dark:bg-scarlet-950 text-scarlet-700 dark:text-scarlet-400 flex items-center justify-center mb-4">
+              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Finance & Accounting Acumen</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Pursuing a B.S. in Finance at Rutgers Business School with deep focus on corporate finance, accounting principles, statistics, and business economics.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-950 text-scarlet-700 dark:text-scarlet-400 flex items-center justify-center mb-4">
+              <i data-lucide="wine" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Event & Bar Operations</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Hands-on banquet bartender and banquet server managing high-volume service for up to 400 attendees, inventory controls, and cross-team execution.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="languages" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Native Bilingual Communication</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Fully native in English and Spanish, facilitating clear communication with clients, diverse teams, vendors, and community outreach foundations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Metric counter cards -->
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="p-5 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+            <div class="text-3xl sm:text-4xl font-extrabold text-scarlet-700 dark:text-scarlet-500 font-display">3.7</div>
+            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">Brookdale GPA / 4.0</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+            <div class="text-3xl sm:text-4xl font-extrabold text-scarlet-700 dark:text-scarlet-500 font-display">400+</div>
+            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">Banquet Guest Capacity</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+            <div class="text-3xl sm:text-4xl font-extrabold text-scarlet-700 dark:text-scarlet-500 font-display">75%</div>
+            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">Service Delay Reduction</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+            <div class="text-3xl sm:text-4xl font-extrabold text-scarlet-700 dark:text-scarlet-500 font-display">100%</div>
+            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">Inspection & BEO Compliance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="py-20 border-t border-slate-200 dark:border-slate-800/80 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="text-xs uppercase tracking-widest font-bold text-scarlet-700 dark:text-scarlet-400">Academic Background</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white mt-1">Education</h2>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Rutgers Business School -->
+          <div class="p-7 rounded-2xl bg-white dark:bg-navy-900 border-2 border-scarlet-700/25 dark:border-scarlet-900/60 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-scarlet-600/5 rounded-full blur-2xl"></div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-scarlet-700 dark:text-scarlet-400">Rutgers, The State University of New Jersey</span>
+                <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white">Rutgers Business School</h3>
+              </div>
+              <span class="px-3.5 py-1 rounded-full bg-scarlet-100 dark:bg-scarlet-950 text-scarlet-800 dark:text-scarlet-300 text-xs font-bold w-fit">
+                Graduation: May 2027
+              </span>
+            </div>
+            <p class="text-base font-semibold text-slate-700 dark:text-slate-300">Bachelor of Science in Finance</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">New Brunswick, NJ</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-4 leading-relaxed">
+              Studying corporate finance, asset valuation, macro/micro financial structures, and quantitative data analysis.
+            </p>
+          </div>
+
+          <!-- Brookdale Community College -->
+          <div class="p-7 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Honors Foundation</span>
+                <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white">Brookdale Community College</h3>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-bold">
+                  GPA: 3.7 / 4.0
+                </span>
+                <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">
+                  May 2025
+                </span>
+              </div>
+            </div>
+            <p class="text-base font-semibold text-slate-700 dark:text-slate-300">Associate of Science in Business Administration and Management</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Lincroft, NJ</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-4 leading-relaxed">
+              Mastered foundational courses in financial and managerial accounting, business statistics, economics, and business law with a 3.7 GPA.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-slate-100/60 dark:bg-navy-900/40 border-t border-slate-200 dark:border-slate-800/80 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="text-xs uppercase tracking-widest font-bold text-scarlet-700 dark:text-scarlet-400">Professional Record</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white mt-1">Work Experience</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Sheraton Hotel • Eatontown, New Jersey</p>
+        </div>
+
+        <div class="relative pl-6 sm:pl-8 border-l-2 border-scarlet-600/40 dark:border-scarlet-700/50 space-y-10">
+
+          <!-- Job 1: Bartender, Banquet -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-navy-950 border-4 border-scarlet-700 group-hover:scale-125 transition-transform"></div>
+            
+            <div class="bg-white dark:bg-navy-900 p-7 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                <div class="flex items-center gap-2.5">
+                  <span class="p-1.5 rounded-lg bg-rose-50 dark:bg-rose-950 text-scarlet-700 dark:text-scarlet-400">
+                    <i data-lucide="wine" class="w-4 h-4"></i>
+                  </span>
+                  <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">Bartender, Banquet</h3>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-scarlet-100 dark:bg-scarlet-950 text-scarlet-800 dark:text-scarlet-300 w-fit">
+                  Aug 2022 - Present
+                </span>
+              </div>
+              <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-4">Sheraton Hotel • Eatontown, NJ</div>
+
+              <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed list-disc list-outside pl-5">
+                <li>Executed high-volume beverage operations and custom bar services for corporate galas and formal events of up to <strong>400 guests</strong>.</li>
+                <li>Monitored inventory of spirits, wine, and bar supplies, decreasing shortages and replacement costs by <strong>75%</strong> through systematic upkeep.</li>
+                <li>Ensured <strong>100% compliance</strong> with New Jersey liquor regulations, state safety guidelines, and health inspection mandates.</li>
+                <li>Conducted rapid bar setup and inventory breakdown in <strong>under 60 minutes</strong>, maximizing event turnover efficiency.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 2: Server, Banquet -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-navy-950 border-4 border-slate-400 dark:border-slate-600 group-hover:border-scarlet-600 group-hover:scale-125 transition-all"></div>
+            
+            <div class="bg-white dark:bg-navy-900 p-7 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                <div class="flex items-center gap-2.5">
+                  <span class="p-1.5 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400">
+                    <i data-lucide="utensils" class="w-4 h-4"></i>
+                  </span>
+                  <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">Server, Banquet</h3>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 w-fit">
+                  Aug 2022 - Present
+                </span>
+              </div>
+              <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-4">Sheraton Hotel • Eatontown, NJ</div>
+
+              <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed list-disc list-outside pl-5">
+                <li>Orchestrated seamless execution of banquets for up to <strong>400 guests</strong>, ensuring punctual setup, course pacing, and clean presentation.</li>
+                <li>Delivered exemplary guest care, achieving <strong>90% positive feedback ratings</strong> and recognition from supervisors and clients.</li>
+                <li>Coordinated directly with culinary and catering teams to streamline floor communication, cutting service delays by <strong>75%</strong>.</li>
+                <li>Maintained spotless dining and banquet areas, passing <strong>100%</strong> of cleanliness and sanitation inspections.</li>
+                <li>Executed room setup and breakdown in <strong>under 60 minutes</strong>, bolstering venue operational productivity.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 border-t border-slate-200 dark:border-slate-800/80 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="text-xs uppercase tracking-widest font-bold text-scarlet-700 dark:text-scarlet-400">Core Toolkit</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white mt-1">Skills & Competencies</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Column 1: Technical & Languages -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-scarlet-50 dark:bg-scarlet-950 text-scarlet-700 dark:text-scarlet-400 flex items-center justify-center mb-4">
+                <i data-lucide="laptop" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-2">Technical & Languages</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Software literacy, computing tools, and fluency.</p>
+              
+              <div class="space-y-3">
+                <div>
+                  <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Languages:</span>
+                  <div class="flex flex-wrap gap-2 mt-1.5">
+                    <span class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-scarlet-50 dark:bg-scarlet-950 text-scarlet-700 dark:text-scarlet-300 border border-scarlet-200 dark:border-scarlet-900">English (Native)</span>
+                    <span class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-scarlet-50 dark:bg-scarlet-950 text-scarlet-700 dark:text-scarlet-300 border border-scarlet-200 dark:border-scarlet-900">Spanish (Native)</span>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Software & Tools:</span>
+                  <div class="flex flex-wrap gap-2 mt-1.5">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Microsoft Excel</span>
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">PowerPoint</span>
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Microsoft Word</span>
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">CAD (Computer-Aided Design)</span>
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Coding Fundamentals</span>
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Computer Literacy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Finance & Quantitative -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
+                <i data-lucide="calculator" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-2">Finance & Quantitative</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Financial reasoning, statistics, and mathematics.</p>
+              
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Accounting Principles</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Personal Finance</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Mathematics</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Statistical Analysis</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Inventory Cost Control</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Data Interpretation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Operations & Leadership -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
+                <i data-lucide="users" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-2">Operations & Leadership</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Adaptability, interpersonal relations, and crisis management.</p>
+              
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Problem Solving</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Organizational Skills</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Public Speaking & Speech</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Interpersonal Skills</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Easily Adaptable</span>
+                <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">High-Volume Hospitality</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="coursework" class="py-20 bg-slate-100/60 dark:bg-navy-900/40 border-t border-slate-200 dark:border-slate-800/80 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <span class="text-xs uppercase tracking-widest font-bold text-scarlet-700 dark:text-scarlet-400">Curriculum Foundation</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white mt-1">Relevant Coursework</h2>
+          </div>
+
+          <!-- Filter buttons -->
+          <div class="flex flex-wrap gap-2" id="course-filter-container">
+            <button class="course-filter-btn px-3.5 py-1.5 text-xs font-bold rounded-xl bg-scarlet-700 text-white transition-colors" data-filter="all">All (14)</button>
+            <button class="course-filter-btn px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-filter="finance">Finance & Accounting</button>
+            <button class="course-filter-btn px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-filter="analytics">Economics & Analytics</button>
+            <button class="course-filter-btn px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-filter="management">Operations & Management</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="courses-grid">
+          
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="finance">
+            <div class="text-xs font-bold text-scarlet-700 dark:text-scarlet-400 mb-1">Finance Core</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Fundamentals of Finance</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="finance">
+            <div class="text-xs font-bold text-scarlet-700 dark:text-scarlet-400 mb-1">Corporate Core</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Financial Management</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="finance">
+            <div class="text-xs font-bold text-scarlet-700 dark:text-scarlet-400 mb-1">Accounting</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Principles of Accounting I</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="finance">
+            <div class="text-xs font-bold text-scarlet-700 dark:text-scarlet-400 mb-1">Accounting</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Principles of Accounting II</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="analytics">
+            <div class="text-xs font-bold text-purple-600 dark:text-purple-400 mb-1">Quantitative</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Business Statistics</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="analytics">
+            <div class="text-xs font-bold text-purple-600 dark:text-purple-400 mb-1">Quantitative</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Statistical Methods in Business</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="analytics">
+            <div class="text-xs font-bold text-purple-600 dark:text-purple-400 mb-1">Economics</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Micro Economics</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="analytics">
+            <div class="text-xs font-bold text-purple-600 dark:text-purple-400 mb-1">Economics</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Macro Economics</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="management">
+            <div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">Operations</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Intro to Supply Chain Management</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="management">
+            <div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">Strategy</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Intro to Management</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="management">
+            <div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">Commercial Legal</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Business Law I</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="management">
+            <div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">Marketing</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Intro to Marketing</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="management">
+            <div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">Leadership</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Public Speaking I</div>
+          </div>
+
+          <div class="course-card p-4 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm" data-cat="management">
+            <div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">Specialized</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-white">Intro to Sports Management</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="involvement" class="py-20 border-t border-slate-200 dark:border-slate-800/80 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="text-xs uppercase tracking-widest font-bold text-scarlet-700 dark:text-scarlet-400">Leadership & Service</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white mt-1">Involvement & Community</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Campus Involvement Card -->
+          <div class="bg-white dark:bg-navy-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="p-2 rounded-xl bg-scarlet-50 dark:bg-scarlet-950 text-scarlet-700 dark:text-scarlet-400">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+              </span>
+              <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white">Campus Involvement</h3>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-navy-950/60 border border-slate-200/80 dark:border-slate-800">
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Brookdale Business Club</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  Active member participating in professional finance seminars, guest speaker panels, and networking events.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-navy-950/60 border border-slate-200/80 dark:border-slate-800">
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Educational Opportunity Fund (EOF) Student Alliance</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  Engaged in peer academic mentoring, collegiate leadership development, and higher education advocacy.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-navy-950/60 border border-slate-200/80 dark:border-slate-800">
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Asian Club</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  Participated in multicultural student initiatives, cross-cultural celebrations, and diversity programming.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Community Service Card -->
+          <div class="bg-white dark:bg-navy-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="p-2 rounded-xl bg-rose-50 dark:bg-rose-950 text-scarlet-700 dark:text-scarlet-400">
+                <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+              </span>
+              <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white">Community Service</h3>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-navy-950/60 border border-slate-200/80 dark:border-slate-800">
+                <div class="flex items-center justify-between mb-1">
+                  <h4 class="font-bold text-slate-900 dark:text-white text-sm">FoodBank Fulfill</h4>
+                  <span class="text-[11px] font-semibold text-scarlet-700 dark:text-scarlet-400">Neptune Township, NJ</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Volunteered with inventory stocking, grocery kit packaging, and community distribution logistics serving families across Monmouth County.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-navy-950/60 border border-slate-200/80 dark:border-slate-800">
+                <div class="flex items-center justify-between mb-1">
+                  <h4 class="font-bold text-slate-900 dark:text-white text-sm">The Mya Lin Foundation</h4>
+                  <span class="text-[11px] font-semibold text-scarlet-700 dark:text-scarlet-400">"Mya Cup" Participant</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Actively participated in community fundraising, supporting children's healthcare and charitable foundation initiatives.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 border-t border-slate-200 dark:border-slate-800/80 px-4 sm:px-6 lg:px-8 bg-slate-100/50 dark:bg-navy-900/30">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-xs uppercase tracking-widest font-bold text-scarlet-700 dark:text-scarlet-400">Inquiries</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white mt-1">Get in Touch</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Available for finance internships, operational roles, and business opportunities.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          
+          <!-- Direct Contact Card -->
+          <div class="md:col-span-5 space-y-4">
+            <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+              
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Rutgers Scarletmail</span>
+                <div class="flex items-center justify-between mt-1">
+                  <a href="mailto:wm389@scarletmail.rutgers.edu" class="text-sm font-semibold text-slate-800 dark:text-slate-200 hover:text-scarlet-700 dark:hover:text-scarlet-400 truncate mr-2">
+                    wm389@scarletmail.rutgers.edu
+                  </a>
+                  <button id="copy-email-btn" aria-label="Copy Email" class="p-1.5 rounded-lg text-slate-400 hover:text-scarlet-700 dark:hover:text-scarlet-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="border-t border-slate-100 dark:border-slate-800 pt-4">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Telephone</span>
+                <div class="flex items-center justify-between mt-1">
+                  <a href="tel:8484663819" class="text-sm font-semibold text-slate-800 dark:text-slate-200 hover:text-scarlet-700 dark:hover:text-scarlet-400">
+                    (848) 466-3819
+                  </a>
+                  <button id="copy-phone-btn" aria-label="Copy Phone" class="p-1.5 rounded-lg text-slate-400 hover:text-scarlet-700 dark:hover:text-scarlet-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="border-t border-slate-100 dark:border-slate-800 pt-4">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Location</span>
+                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200 mt-1">
+                  Ocean Township, NJ 07712
+                </p>
+              </div>
+
+              <div class="border-t border-slate-100 dark:border-slate-800 pt-4">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">LinkedIn Profile</span>
+                <a href="https://www.linkedin.com/in/william-mendoza-marquez-817841274" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 mt-1 text-sm font-semibold text-scarlet-700 dark:text-scarlet-400 hover:underline">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                  <span>william-mendoza-marquez</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Toast Notice -->
+            <div id="copy-toast" class="hidden p-3 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-semibold flex items-center gap-2 shadow-sm transition-all">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span id="toast-text">Copied to clipboard!</span>
+            </div>
+          </div>
+
+          <!-- Direct Message Form -->
+          <div class="md:col-span-7 bg-white dark:bg-navy-900 p-7 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label for="contact-name" class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Your Name</label>
+                <input 
+                  type="text" 
+                  id="contact-name" 
+                  required 
+                  placeholder="e.g. Alex Morgan"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-navy-950 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-scarlet-600 text-sm"
+                >
+              </div>
+
+              <div>
+                <label for="contact-email" class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Your Email</label>
+                <input 
+                  type="email" 
+                  id="contact-email" 
+                  required 
+                  placeholder="e.g. alex@firm.com" 
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-navy-950 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-scarlet-600 text-sm"
+                >
+              </div>
+
+              <div>
+                <label for="contact-message" class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Message</label>
+                <textarea 
+                  id="contact-message" 
+                  rows="4" 
+                  required 
+                  placeholder="Hello William, I would like to discuss an opportunity..." 
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-navy-950 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-scarlet-600 text-sm"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full py-3 px-6 rounded-xl bg-scarlet-700 hover:bg-scarlet-800 text-white font-semibold flex items-center justify-center gap-2 shadow-md shadow-scarlet-700/25 hover:shadow-scarlet-700/40 transition-all text-sm"
+              >
+                <span>Send Message</span>
+                <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+
+              <div id="form-feedback" class="hidden text-center text-xs font-medium py-2 rounded-lg"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-navy-950 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+      <p>© <span id="current-year"></span> William Mendoza-Marquez • Rutgers Business School.</p>
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">Top ↑</a>
+        <a href="https://www.linkedin.com/in/william-mendoza-marquez-817841274" target="_blank" rel="noopener noreferrer" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">LinkedIn</a>
+        <a href="mailto:wm389@scarletmail.rutgers.edu" class="hover:text-scarlet-700 dark:hover:text-scarlet-400 transition-colors">Scarletmail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Auto-update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Theme Management (Light / Dark)
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const rootEl = document.documentElement;
+
+    function initTheme() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        rootEl.classList.add('dark');
+      } else {
+        rootEl.classList.remove('dark');
+      }
+    }
+    initTheme();
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = rootEl.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Local JPEG Picture Previewer
+    const imageUploadInput = document.getElementById('image-upload');
+    const profileImg = document.getElementById('profile-img');
+
+    imageUploadInput.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          profileImg.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Coursework Explorer Filter
+    const filterButtons = document.querySelectorAll('.course-filter-btn');
+    const courseCards = document.querySelectorAll('.course-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const selected = btn.getAttribute('data-filter');
+
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-scarlet-700', 'text-white');
+          b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+        });
+
+        btn.classList.add('bg-scarlet-700', 'text-white');
+        btn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+
+        courseCards.forEach(card => {
+          const cat = card.getAttribute('data-cat');
+          if (selected === 'all' || cat === selected) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Copy to Clipboard Utility
+    function copyText(val, label) {
+      const textarea = document.createElement('textarea');
+      textarea.value = val;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        const toast = document.getElementById('copy-toast');
+        document.getElementById('toast-text').textContent = `${label} copied to clipboard!`;
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 3000);
+      } catch (err) {
+        console.error('Copy failed:', err);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    document.getElementById('copy-email-btn').addEventListener('click', () => {
+      copyText('wm389@scarletmail.rutgers.edu', 'Email');
+    });
+
+    document.getElementById('copy-phone-btn').addEventListener('click', () => {
+      copyText('(848) 466-3819', 'Phone number');
+    });
+
+    // Contact Form Handler
+    const contactForm = document.getElementById('contact-form');
+    const feedback = document.getElementById('form-feedback');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const message = document.getElementById('contact-message').value;
+
+      feedback.classList.remove('hidden', 'bg-rose-100', 'text-rose-800');
+      feedback.classList.add('bg-emerald-100', 'text-emerald-800', 'dark:bg-emerald-950', 'dark:text-emerald-300');
+      feedback.textContent = `Opening mail client for ${name}...`;
+
+      setTimeout(() => {
+        window.location.href = `mailto:wm389@scarletmail.rutgers.edu?subject=Portfolio Inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AReply Email: ${encodeURIComponent(email)}`;
+        contactForm.reset();
+      }, 700);
+    });
+  </script>
+</body>
+</html>
